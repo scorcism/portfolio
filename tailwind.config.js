@@ -12,7 +12,7 @@ module.exports = {
       },
       fontFamily: {
         Poppins: ['Poppins', "sans-serif"],
-        "League Spartan": ['League Spartan', "sans-serif"],
+        "League-Spartan": ['League Spartan', "sans-serif"],
         Satisfy: ['Satisfy',"serif"]
       },
       backgroundImage: (theme) => ({
