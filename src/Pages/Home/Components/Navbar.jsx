@@ -24,7 +24,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
     const isAboveMediumScreens = useMediaQuery("(min-width: 768px)");
 
     return (
-        <nav className={`z-40 w-full fixed top-0 py-5 `}>
+        <nav className={`z-40 w-full fixed top-0 py-5  mb-3`}>
             <div className="flex items-center justify-between mx-auto w-5/6">
                 <h4 className="font-League-Spartan text-3xl font-bold
                 
@@ -38,7 +38,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
                         (
                             <div className="flex justify-between gap-16 font-opensans text-sm font-semibold">
                                 <Link page="Home" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
-                                <Link page="Skills" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+                                <Link page="about" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
                                 <Link page="Projects" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
                                 <Link page="Blogs" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
                                 <Link page="Contact" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />

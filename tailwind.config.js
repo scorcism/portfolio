@@ -16,7 +16,7 @@ module.exports = {
         Satisfy: ['Satisfy',"serif"]
       },
       backgroundImage: (theme) => ({
-        "gradient-rainbow": "linear-gradient(90deg, rgba(131,58,180,0.9491968662464986) 0%, rgba(163,28,28,1) 50%, rgba(206,126,16,1) 100%);"
+        "gradient-rainbow": "linear-gradient(90deg, white,gray, white);"
       })
     },
     screens: {

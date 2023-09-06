@@ -30,8 +30,8 @@ const Landing = () => {
 
     const variants = {
         default: {
-            x: mousePosition.x - 16,
-            y: mousePosition.y - 16
+            x: mousePosition.x - 10,
+            y: mousePosition.y - 10
         },
         text: {
             x: mousePosition.x - 35,
@@ -73,7 +73,7 @@ const Landing = () => {
 
             </motion.div>
 
-            <motion.div
+            {/* <motion.div
                 initial="hidden"
                 whileInView="visible"
                 viewport={{
@@ -86,11 +86,11 @@ const Landing = () => {
                 }}
             >
                 <h3 className="md:text-xl">Abhishek Pathak</h3>
-            </motion.div>
+            </motion.div> */}
             <motion.div className="cursor" style={{
                 backgroundColor: "#ffffdd",
-                height: "32px",
-                width: "32px",
+                height: "20px",
+                width: "20px",
                 borderRadius: "50%",
                 position: "fixed",
                 top: "0",
