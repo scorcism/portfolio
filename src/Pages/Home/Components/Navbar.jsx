@@ -7,7 +7,10 @@ const Link = ({ page, selectedPage, setSelectedPage }) => {
     const lowerCasePage = page.toLowerCase();
 
     return (
-        <AnchorLink className={`${selectedPage === lowerCasePage ? "text-gold" : ""} hover:text-gold text-white transition duration-300`}
+        <AnchorLink className={`${selectedPage === lowerCasePage ? "text-gold" : ""} hover:text-gold text-white transition duration-300
+        border-b-[1px] border-transparent
+                hover:border-white
+        `}
             href={`#${lowerCasePage}`}
             onClick={() => { setSelectedPage(lowerCasePage) }}
         >
@@ -18,43 +21,46 @@ const Link = ({ page, selectedPage, setSelectedPage }) => {
 
 const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
 
-    const [isMenuToggled, setIsMenuToggled] = useState(false);
     const isAboveMediumScreens = useMediaQuery("(min-width: 768px)");
-    const navbarBackground = isTopOfPage ? "" :
-        "bg-red"
 
     return (
-        <nav className={`${navbarBackground} z-40 w-full fixed top-0 py-8`}>
+        <nav className={`z-40 w-full fixed top-0 py-5 `}>
             <div className="flex items-center justify-between mx-auto w-5/6">
-                <h4 className="font-League-Spartan text-3xl font-bold">
+                <h4 className="font-League-Spartan text-3xl font-bold
+                
+                ">
                     scor32k
                 </h4>
 
-            {/* DESKTOP */}
-            {
-                isAboveMediumScreens ? 
-                (
-                    <div className="flex justify-between gap-16 font-opensans text-sm font-semibold">
-                            <Link page="Home" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
-                            <Link page="Skills" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
-                            <Link page="Projects" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
-                            <Link page="Testimonials" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
-                            <Link page="Contact" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
-                        </div>
-                )
-                :
-                (
-                    <button
-                                className="rounded-full bg-red p-2 "
-                                onClick={() => setIsMenuToggled(!isMenuToggled)}
+                {/* DESKTOP */}
+                {
+                    isAboveMediumScreens ?
+                        (
+                            <div className="flex justify-between gap-16 font-opensans text-sm font-semibold">
+                                <Link page="Home" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+                                <Link page="Skills" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+                                <Link page="Projects" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+                                <Link page="Blogs" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+                                <Link page="Contact" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+                            </div>
+                        )
+                        :
+                        (
+                            <button
+                                className="rounded-md bg-red p-2 border-2 
+                                py-2 px-5
+                                hover:text-gold
+                                transition duration-200
+                                "
                             >
-                                clicl
+                                Blogs
                             </button>
-                )
-            }
+                        )
+                }
 
 
             </div>
+
         </nav>
     )
 }
