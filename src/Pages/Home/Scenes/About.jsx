@@ -2,12 +2,18 @@ import useMediaQuery from "../../../hooks/useMediaQuery";
 import { motion } from 'framer-motion'
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import SocalMediaIcons from "../Components/SocialMediaIcons";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const About = ({ setSelectedPage }) => {
     const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
+
+    const ref = useRef(null);
+    useEffect(() => {
+        setSelectedPage(ref.current.id)
+    }, [])
+
     return (
-        <section id="about" className="md:flex md:justify-between md:items-center md:h-full gap-16 py-10">
+        <section id="about" ref={ref} className="md:flex md:justify-between md:items-center md:h-full gap-16 py-10">
             <div className="z-30 basis-2/5 mt-12 md:mt-32 ">
                 <motion.div
                     initial="hidden"

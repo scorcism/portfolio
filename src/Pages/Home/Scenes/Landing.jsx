@@ -3,7 +3,7 @@ import useMediaQuery from "../../../hooks/useMediaQuery";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useEffect, useState } from "react";
 
-const Landing = () => {
+const Landing = ({setSelectedPage}) => {
 
     const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
     const [mousePosition, setMousePosition] = useState({
@@ -27,6 +27,10 @@ const Landing = () => {
             window.removeEventListener("mousemove", mouseMoveFunction)
         }
     }, [])
+
+    useEffect(()=>{
+        setSelectedPage("home")
+    },[])
 
     const variants = {
         default: {
@@ -69,7 +73,7 @@ const Landing = () => {
                     visible: { opacity: 1, scale: 1 }
                 }}
             >
-                <h1 onMouseEnter={textEnter} onMouseLeave={textLeave} className="md:text-9xl ss:text-8xl xs:text-7xl font-League-Spartan capitalize">SCORCISM</h1>
+                <h1 onMouseEnter={textEnter} onMouseLeave={textLeave} className="text-5xl sm:text-9xl font-League-Spartan capitalize">SCORCISM</h1>
 
             </motion.div>
 

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import Line from '../Components/Line';
 import { projects } from '../assets/projects-data'
+import { useEffect, useRef } from 'react';
 
 const container = {
     hidden: {
@@ -30,6 +31,8 @@ const Project = ({ title, desc, url }) => {
     bg-grey z-30 flex flex-col justify-center items-center text-center p-16 text-white
     `
 
+    
+
     return (
         <motion.div
             variants={projectVarient}
@@ -50,9 +53,16 @@ const Project = ({ title, desc, url }) => {
     )
 }
 
-const Projetcs = () => {
+const Projetcs = ({ setSelectedPage }) => {
+    const ref = useRef(null);
+
+    useEffect(() => {
+        setSelectedPage(ref.current.id)
+    }, [])
+
+
     return (
-        <section id='projects' className='pt-20 pb-20'>
+        <section id='projects' ref={ref} className='pt-20 pb-20'>
             <motion.div
                 className="md:w-2/5 mx-auto text-center"
                 initial="hidden"

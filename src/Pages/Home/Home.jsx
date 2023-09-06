@@ -28,6 +28,7 @@ const Home = () => {
         }
     }, [])
 
+    console.log(selectedPage)
 
     return (
         <>
@@ -53,7 +54,7 @@ const Home = () => {
                 </div>
                 <Line/>
                 <div className="mx-auto w-5/6">
-                    <Projetcs/>
+                    <Projetcs setSelectedPage={setSelectedPage}/>
                 </div>
                 <Line/>
                 <div className="mx-auto w-5/6">
