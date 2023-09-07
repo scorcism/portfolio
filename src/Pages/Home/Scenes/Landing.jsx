@@ -1,9 +1,8 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import useMediaQuery from "../../../hooks/useMediaQuery";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useEffect, useState } from "react";
 
-const Landing = ({setSelectedPage}) => {
+const Landing = ({ setSelectedPage }) => {
 
     const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
     const [mousePosition, setMousePosition] = useState({
@@ -28,9 +27,9 @@ const Landing = ({setSelectedPage}) => {
         }
     }, [])
 
-    useEffect(()=>{
+    useEffect(() => {
         setSelectedPage("home")
-    },[])
+    }, [])
 
     const variants = {
         default: {
@@ -42,8 +41,8 @@ const Landing = ({setSelectedPage}) => {
             y: mousePosition.y - 35,
             height: 70,
             width: 70,
-            backgroundColor:"#2c3333",
-            mixBlendMode:"difference"
+            backgroundColor: "#2c3333",
+            mixBlendMode: "difference"
         }
     }
 
@@ -58,7 +57,7 @@ const Landing = ({setSelectedPage}) => {
     return (
         <section id="home" className="flex justify-center flex-col gap-5 items-center w-[100%] h-screen"
             style={{
-                  cursor:"none"  
+                cursor: "none"
             }}
         >
             <motion.div
@@ -73,9 +72,84 @@ const Landing = ({setSelectedPage}) => {
                     visible: { opacity: 1, scale: 1 }
                 }}
             >
-                <h1 onMouseEnter={textEnter} onMouseLeave={textLeave} className="text-5xl sm:text-9xl font-League-Spartan capitalize">SCORCISM</h1>
+                <div onMouseEnter={textEnter} onMouseLeave={textLeave} className="text-5xl sm:text-9xl font-League-Spartan capitalize flex gap-1 justify-between">
+                    <motion.span
+                        initial="left"
+                        transition={{
+                            delay: 0.5, duration: 0.2,
+                        }}
+                        whileInView="bounce"
+                        variants={{
+                            left: { x: -60 },
+                            bounce: { x: 0 }
+                        }}
+                    >
+                        S
+                    </motion.span>
+                    <h1
+                    >
+                        COR
+
+                    </h1>
+                    <h1>
+                        CIS
+                    </h1>
+
+                    <motion.span
+                        initial={{
+                            x: 0
+                        }}
+                        transition={{
+                            delay: 0.7, duration: 0.3
+                        }}
+                        whileInView={{
+                            x: +60, opacity: 0,
+                            color: "red"
+                        }}
+                    >
+                        M
+                    </motion.span>
+                    <motion.span
+                        initial={{
+                            opacity: 0,
+                            color: "red"
+                        }}
+                        transition={{
+                            delay: 1.2,
+                            duration: 0.3
+                        }}
+                        whileInView={{
+                            x: -110,
+                            opacity: 1,
+                            color: "#ffffdd"
+                        }}
+                    >
+                        M
+                    </motion.span>
+                </div>
 
             </motion.div>
+            <motion.div
+                initial={{
+                    x:-100,
+                    color:"#2c3333"
+                }}
+                transition={{
+                    delay:1.5,
+                    duration:0.4
+                }}
+                whileInView={{
+                    x:0,
+                    color:"#ffffdd"
+                    
+                }}
+                whileHover={{
+                    letterSpacing:"2px",
+                }}
+                className={`h-1 text-2xl`} 
+                >
+                    Learner | Developer 
+                    </motion.div>
 
             {/* <motion.div
                 initial="hidden"

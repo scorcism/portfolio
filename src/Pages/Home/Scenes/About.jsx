@@ -1,5 +1,5 @@
 import useMediaQuery from "../../../hooks/useMediaQuery";
-import { motion } from 'framer-motion'
+import { motion, useViewportScroll, useTransform } from "framer-motion";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import SocalMediaIcons from "../Components/SocialMediaIcons";
 import { useEffect, useRef } from "react";
@@ -14,6 +14,10 @@ const About = ({ setSelectedPage }) => {
     useEffect(() => {
         setSelectedPage(ref.current.id)
     }, [])
+
+    const { scrollYProgress } = useViewportScroll();
+    const scale = useTransform(scrollYProgress, [0, 5], [16, 83]);
+
 
     return (
         <section id="about" ref={ref} className="md:flex md:justify-between md:items-center md:h-full gap-16 py-10">
