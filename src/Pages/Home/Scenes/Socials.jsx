@@ -25,30 +25,50 @@ const Socials = () => {
                 }}
             >
 
-                <a className="hover:opacity-50 transition duration-500" href="#"
+                <motion.a 
+                transition={{
+                    duration: 0.2
+                }}
+                whileHover={{ scale: 1.2, rotate: 360, borderRadius:"50%" }}
+                className="hover:opacity-50 transition duration-500" href="#"
                     target="_blank"
                     rel="noreferrer"
                 >
                     <img src="assets/linkedin.png" alt="linkedin" />
-                </a>
-                <a className="hover:opacity-50 transition duration-500" href="#"
+                </motion.a>
+                <motion.a
+                    transition={{
+                        duration: 0.2
+                    }}
+                    whileHover={{ scale: 1.2, x: +10, y: -30, color:"blue" }}
+                    className="hover:opacity-50 transition duration-500" href="#"
                     target="_blank"
                     rel="noreferrer"
                 >
                     <img src="assets/twitter.png" alt="twitter" />
-                </a>
-                <a className="hover:opacity-50 transition duration-500" href="#"
+                </motion.a>
+                <motion.a
+                    transition={{
+                        duration: 0.2
+                    }}
+                    whileHover={{ scale: 1.2, rotate: -360 }}
+                    className="hover:opacity-50 transition duration-500" href="#"
                     target="_blank"
                     rel="noreferrer"
                 >
                     <img src="assets/facebook.png" alt="facebook" />
-                </a>
-                <a className="hover:opacity-50 transition duration-500" href="#"
+                </motion.a>
+                <motion.a
+                    transition={{
+                        duration: 0.2
+                    }}
+                    whileHover={{ scale: 1.2, rotate: 360 }}
+                    className="hover:opacity-50 transition duration-500" href="#"
                     target="_blank"
                     rel="noreferrer"
                 >
                     <img src="assets/instagram.png" alt="instagram" />
-                </a>
+                </motion.a>
             </motion.div>
         </section>
     )

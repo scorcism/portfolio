@@ -8,6 +8,9 @@ const About = ({ setSelectedPage }) => {
     const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
 
     const ref = useRef(null);
+
+    const constraintsRef = useRef(null);
+
     useEffect(() => {
         setSelectedPage(ref.current.id)
     }, [])
@@ -27,26 +30,24 @@ const About = ({ setSelectedPage }) => {
                 >
                     <p className="text-6xl font-playfair z-10 text-center md:text-start text-gold">
                         Abhishek {""}
-                        <span
+                        <motion.span
+                            whileHover={{ letterSpacing: "4px" }}
                             className="xs:relative xs:text-deep-blue font-semibold z-20 text-white
                             "
-                        >Pathak</span>
+                        >Pathak</motion.span>
                     </p>
                     <p className="mt-10  mb-7 text-md text-center md:text-start">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam repellat expedita quaerat?</p>
                 </motion.div>
 
             </div>
-            <div className="md:order-2 flex justify-center basis-3/5 z-10 mt-16 md:mt-32">
-                {isAboveMediumScreens ?
-                    (<div className="relative z-0 ml-20">
-                        <img src="assets/profile-image.png" alt="profile" className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px]" />
-                    </div>)
-                    :
-                    (<div>
-                        <img src="assets/profile-image.png" alt="profile" className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px]" />
-                    </div>)
-                }
-            </div>
+            <motion.div style={{ cursor: "pointer" }} className="md:order-2 flex justify-center basis-3/5 z-10 mt-16 md:mt-32" ref={constraintsRef}>
+                <motion.div className="relative z-0 ml-20" >
+                    <motion.img
+                        drag dragConstraints={constraintsRef}
+                        src="assets/profile-image.png" alt="profile" className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px]" />
+                </motion.div>
+
+            </motion.div>
 
         </section>
     )
