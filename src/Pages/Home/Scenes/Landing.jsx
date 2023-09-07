@@ -73,19 +73,27 @@ const Landing = ({ setSelectedPage }) => {
                 }}
             >
                 <div onMouseEnter={textEnter} onMouseLeave={textLeave} className="text-5xl sm:text-9xl font-League-Spartan capitalize flex gap-1 justify-between">
-                    <motion.span
-                        initial="left"
-                        transition={{
-                            delay: 0.5, duration: 0.2,
-                        }}
-                        whileInView="bounce"
-                        variants={{
-                            left: { x: -60 },
-                            bounce: { x: 0 }
-                        }}
-                    >
-                        S
-                    </motion.span>
+                    {
+                        isAboveMediumScreens ?
+                        <motion.span
+                            initial="left"
+                            transition={{
+                                delay: 0.5, duration: 0.2,
+                            }}
+                            whileInView="bounce"
+                            variants={{
+                                left: { x: -60 },
+                                bounce: { x: 0 }
+                            }}
+                        >
+                            S
+                        </motion.span>
+                        : 
+                        <h1>
+                            S
+                        </h1>
+                    }
+
                     <h1
                     >
                         COR
@@ -94,62 +102,73 @@ const Landing = ({ setSelectedPage }) => {
                     <h1>
                         CIS
                     </h1>
+                    {
+                        isAboveMediumScreens ?
 
-                    <motion.span
-                        initial={{
-                            x: 0
-                        }}
-                        transition={{
-                            delay: 0.7, duration: 0.3
-                        }}
-                        whileInView={{
-                            x: +60, opacity: 0,
-                            color: "red"
-                        }}
-                    >
-                        M
-                    </motion.span>
-                    <motion.span
-                        initial={{
-                            opacity: 0,
-                            color: "red"
-                        }}
-                        transition={{
-                            delay: 1.2,
-                            duration: 0.3
-                        }}
-                        whileInView={{
-                            x: -110,
-                            opacity: 1,
-                            color: "#ffffdd"
-                        }}
-                    >
-                        M
-                    </motion.span>
+
+                        <motion.span
+                            initial={{
+                                x: 0
+                            }}
+                            transition={{
+                                delay: 0.7, duration: 0.3
+                            }}
+                            whileInView={{
+                                x: +60, opacity: 0,
+                                color: "red"
+                            }}
+                        >
+                            M
+                        </motion.span>
+                        :
+                        <h1>
+                            M
+                        </h1>
+                    }
+                    {
+                        isAboveMediumScreens &&
+                        <motion.span
+                            initial={{
+                                opacity: 0,
+                                color: "red"
+                            }}
+                            transition={{
+                                delay: 1.2,
+                                duration: 0.3
+                            }}
+                            whileInView={{
+                                x: -110,
+                                opacity: 1,
+                                color: "#ffffdd"
+                            }}
+                        >
+                            M
+                        </motion.span>
+                    }
                 </div>
 
             </motion.div>
             <motion.div
                 initial={{
-                    x:-100,
-                    color:"#2c3333"
+                    x: -100,
+                    color: "#2c3333"
                 }}
                 transition={{
-                    delay:1.5,
-                    duration:0.4
+                    delay: 1.5,
+                    duration: 0.4
                 }}
                 whileInView={{
-                    x:0,
-                    color:"#ffffdd"
-                    
+                    x: 0,
+                    color: "#ffffdd"
+
                 }}
                 whileHover={{
-                    letterSpacing:"2px",
+                    letterSpacing: "2px",
                 }}
-                className={`h-1 text-2xl`} 
-                >
-                    Learner | Developer 
-                    </motion.div>
+                className={`h-1 text-2xl`}
+            >
+                Learner | Developer
+            </motion.div>
 
             {/* <motion.div
                 initial="hidden"
