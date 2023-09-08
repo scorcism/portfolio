@@ -32,11 +32,11 @@ const About = ({ setSelectedPage }) => {
                         visible: { opacity: 1, x: 0 }
                     }}
                 >
-                    <p className="text-6xl font-playfair z-10 text-center md:text-start text-gold">
+                    <p className="text-6xl font-playfair z-10 text-center md:text-start text-white">
                         Abhishek {""}
                         <motion.span
                             whileHover={{ letterSpacing: "4px" }}
-                            className="xs:relative xs:text-deep-blue font-semibold z-20 text-white
+                            className="xs:relative xs:text-deep-blue font-semibold z-20 text-gold
                             "
                         >Pathak</motion.span>
                     </p>

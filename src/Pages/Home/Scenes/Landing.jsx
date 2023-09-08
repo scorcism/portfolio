@@ -53,9 +53,12 @@ const Landing = ({ setSelectedPage }) => {
         setCursorVarient("default")
     }
 
+    let onHover = "red"
+    let abhishek = ['a', 'b', 'h', 'i', 's', 'h', 'e', 'k'];
 
     return (
-        <section id="home" className="flex justify-center flex-col gap-5 items-center w-[100%] h-screen"
+        <section id="home" className="relative flex justify-center flex-col gap-5 items-center w-[100%] h-screen
+                "
             style={{
                 cursor: "none"
             }}
@@ -75,23 +78,23 @@ const Landing = ({ setSelectedPage }) => {
                 <div onMouseEnter={textEnter} onMouseLeave={textLeave} className="text-5xl sm:text-9xl font-League-Spartan capitalize flex gap-1 justify-between">
                     {
                         isAboveMediumScreens ?
-                        <motion.span
-                            initial="left"
-                            transition={{
-                                delay: 0.5, duration: 0.2,
-                            }}
-                            whileInView="bounce"
-                            variants={{
-                                left: { x: -60 },
-                                bounce: { x: 0 }
-                            }}
-                        >
-                            S
-                        </motion.span>
-                        : 
-                        <h1>
-                            S
-                        </h1>
+                            <motion.span
+                                initial="left"
+                                transition={{
+                                    delay: 0.5, duration: 0.2,
+                                }}
+                                whileInView="bounce"
+                                variants={{
+                                    left: { x: -60 },
+                                    bounce: { x: 0 }
+                                }}
+                            >
+                                S
+                            </motion.span>
+                            :
+                            <h1>
+                                S
+                            </h1>
                     }
 
                     <h1
@@ -106,24 +109,24 @@ const Landing = ({ setSelectedPage }) => {
                         isAboveMediumScreens ?
 
 
-                        <motion.span
-                            initial={{
-                                x: 0
-                            }}
-                            transition={{
-                                delay: 0.7, duration: 0.3
-                            }}
-                            whileInView={{
-                                x: +60, opacity: 0,
-                                color: "red"
-                            }}
-                        >
-                            M
-                        </motion.span>
-                        :
-                        <h1>
-                            M
-                        </h1>
+                            <motion.span
+                                initial={{
+                                    x: 0
+                                }}
+                                transition={{
+                                    delay: 0.7, duration: 0.4
+                                }}
+                                whileInView={{
+                                    x: +60, opacity: 0,
+                                    color: "red"
+                                }}
+                            >
+                                M
+                            </motion.span>
+                            :
+                            <h1>
+                                M
+                            </h1>
                     }
                     {
                         isAboveMediumScreens &&
@@ -133,8 +136,8 @@ const Landing = ({ setSelectedPage }) => {
                                 color: "red"
                             }}
                             transition={{
-                                delay: 1.2,
-                                duration: 0.3
+                                delay: 1.3,
+                                duration: 0.4
                             }}
                             whileInView={{
                                 x: -110,
@@ -150,7 +153,7 @@ const Landing = ({ setSelectedPage }) => {
             </motion.div>
             <motion.div
                 initial={{
-                    x: -100,
+                    x: +100,
                     color: "#2c3333"
                 }}
                 transition={{
@@ -162,12 +165,16 @@ const Landing = ({ setSelectedPage }) => {
                     color: "#ffffdd"
 
                 }}
-                whileHover={{
-                    letterSpacing: "2px",
-                }}
                 className={`h-1 text-2xl`}
             >
-                Learner | Developer
+                <motion.p
+
+                    whileHover={{
+                        letterSpacing: "2px",
+                    }}
+                >
+                    Learner | Developer
+                </motion.p>
             </motion.div>
 
             {/* <motion.div
@@ -197,6 +204,52 @@ const Landing = ({ setSelectedPage }) => {
                 variants={variants}
                 animate={cursorVarient}
             />
+            <motion.div
+                initial={{
+                    x: -10,
+                    opacity: 0,
+                    color: "#2c3333"
+                }}
+                whileInView={{
+                    x: 0,
+                    opacity: 1,
+                    color: "#383838"
+                }}
+                transition={{
+                    duration: 0.3,
+                    delay: 1.9
+                }}
+
+                className="absolute bottom-0 md:right-[-1em] sm:right-[-30px] text-9xl font-League-Spartan opacity-10"
+            >
+                <motion.h1
+                    className="flex flex-row"
+                    whileHover={{
+                        letterSpacing: "2px",
+                        color: "#505050"
+                    }}
+                >
+                    {
+
+                    }
+
+                    {
+                        abhishek.map((a) => {
+                            return <motion.span
+                                key={a}
+                                whileHover={{
+                                    color: `${onHover}`
+                                }}
+                                transition={{
+                                    duration: 0.2
+                                }}
+                            >
+                                {a}
+                            </motion.span>
+                        })
+                    }
+                </motion.h1>
+            </motion.div>
 
 
         </section>
