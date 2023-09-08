@@ -33,12 +33,12 @@ const About = ({ setSelectedPage }) => {
                     }}
                 >
                     <p className="text-6xl font-playfair z-10 text-center md:text-start text-white">
-                        Abhishek {""}
+                        about {""}
                         <motion.span
                             whileHover={{ letterSpacing: "4px" }}
                             className="xs:relative xs:text-deep-blue font-semibold z-20 text-gold
                             "
-                        >Pathak</motion.span>
+                        >Abhishek</motion.span>
                     </p>
                     <p className="mt-10  mb-7 text-md text-center md:text-start">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam repellat expedita quaerat?</p>
                 </motion.div>

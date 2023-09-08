@@ -96,19 +96,41 @@ const Landing = ({ setSelectedPage }) => {
                                 S
                             </h1>
                     }
-
-                    <h1
+                    <motion.h1
+                        initial={{
+                            opacity:0,
+                            x:-20,
+                        }}
+                        transition={{
+                            delay: 0.7,
+                            duration: 0.1,
+                        }}
+                        whileInView={{
+                            opacity:1,
+                            x:0,
+                        }}
                     >
                         COR
-
-                    </h1>
-                    <h1>
+                        
+                    </motion.h1>
+                    <motion.h1
+                        initial={{
+                            opacity:0,
+                            x:+20,
+                        }}
+                        transition={{
+                            delay: 1.2,
+                            duration: 0.3,
+                        }}
+                        whileInView={{
+                            opacity:1,
+                            x:0,
+                        }}
+                    >
                         CIS
-                    </h1>
+                    </motion.h1>
                     {
                         isAboveMediumScreens ?
-
-
                             <motion.span
                                 initial={{
                                     x: 0
@@ -157,7 +179,7 @@ const Landing = ({ setSelectedPage }) => {
                     color: "#2c3333"
                 }}
                 transition={{
-                    delay: 1.5,
+                    delay: 1.9,
                     duration: 0.4
                 }}
                 whileInView={{
@@ -177,20 +199,6 @@ const Landing = ({ setSelectedPage }) => {
                 </motion.p>
             </motion.div>
 
-            {/* <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{
-                    once: true, amount: 0.5
-                }}
-                transition={{ duration: 0.5, delay: 0.6 }}
-                variants={{
-                    hidden: { opacity: 0, x: -50, },
-                    visible: { opacity: 1, x: 0 }
-                }}
-            >
-                <h3 className="md:text-xl">Abhishek Pathak</h3>
-            </motion.div> */}
             <motion.div className="cursor" style={{
                 backgroundColor: "#ffffdd",
                 height: "20px",
@@ -224,21 +232,14 @@ const Landing = ({ setSelectedPage }) => {
             >
                 <motion.h1
                     className="flex flex-row"
-                    whileHover={{
-                        letterSpacing: "2px",
-                        color: "#505050"
-                    }}
                 >
-                    {
-
-                    }
-
                     {
                         abhishek.map((a) => {
                             return <motion.span
                                 key={a}
                                 whileHover={{
-                                    color: `${onHover}`
+                                    color: `${onHover}`,
+                                    y: -10
                                 }}
                                 transition={{
                                     duration: 0.2

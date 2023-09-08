@@ -31,7 +31,7 @@ const Project = ({ title, desc, url }) => {
     bg-grey z-30 flex flex-col justify-center items-center text-center p-16 text-white
     `
 
-    
+
 
     return (
         <motion.div
@@ -76,9 +76,13 @@ const Projetcs = ({ setSelectedPage }) => {
             >
                 <div>
 
-                    <p className="font-Poppins font-semibold text-4xl text-ceter">
+                    <motion.p
+                        whileHover={{
+                            letterSpacing: "2px"
+                        }}
+                        className="font-Poppins font-semibold text-4xl text-ceter">
                         <span className="">PROJ</span>ECTS
-                    </p>
+                    </motion.p>
                     <div className='flex justify-center mt-5'>
 
                         <Line width="w-1/3" />
