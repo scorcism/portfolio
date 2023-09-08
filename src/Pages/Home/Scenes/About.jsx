@@ -1,8 +1,7 @@
 import useMediaQuery from "../../../hooks/useMediaQuery";
-import { motion, useViewportScroll, useTransform } from "framer-motion";
-import AnchorLink from "react-anchor-link-smooth-scroll";
-import SocalMediaIcons from "../Components/SocialMediaIcons";
-import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import { useContext, useEffect, useRef } from "react";
+import HomeContext from "../Context/HomeContext";
 
 const About = ({ setSelectedPage }) => {
     const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
@@ -11,12 +10,12 @@ const About = ({ setSelectedPage }) => {
 
     const constraintsRef = useRef(null);
 
+    const { textEnter, textLeave } = useContext(HomeContext)
+
     useEffect(() => {
         setSelectedPage(ref.current.id)
     }, [])
 
-    const { scrollYProgress } = useViewportScroll();
-    const scale = useTransform(scrollYProgress, [0, 5], [16, 83]);
 
 
     return (
@@ -32,7 +31,7 @@ const About = ({ setSelectedPage }) => {
                         visible: { opacity: 1, x: 0 }
                     }}
                 >
-                    <p className="text-6xl font-playfair z-10 text-center md:text-start text-white">
+                    <p onMouseEnter={textEnter} onMouseLeave={textLeave} className="text-6xl font-playfair z-10 text-center md:text-start text-white">
                         about {""}
                         <motion.span
                             whileHover={{ letterSpacing: "4px" }}

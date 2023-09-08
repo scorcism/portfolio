@@ -1,60 +1,26 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import useMediaQuery from "../../../hooks/useMediaQuery";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import HomeContext from "../Context/HomeContext";
 
 const Landing = ({ setSelectedPage }) => {
 
     const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
-    const [mousePosition, setMousePosition] = useState({
-        x: 0,
-        y: 0
-    });
 
-    const [cursorVarient, setCursorVarient] = useState("default")
+    let onHover = "red"
 
-    useEffect(() => {
-        const mouseMoveFunction = e => {
-            setMousePosition({
-                x: e.clientX,
-                y: e.clientY
-            })
-        }
 
-        window.addEventListener("mousemove", mouseMoveFunction)
+    const { whoami, cursorSize, variants, cursorVarient, textEnter, textLeave } = useContext(HomeContext);
+    let abhishek = whoami.split("");
 
-        return () => {
-            window.removeEventListener("mousemove", mouseMoveFunction)
-        }
-    }, [])
+
+
 
     useEffect(() => {
         setSelectedPage("home")
     }, [])
 
-    const variants = {
-        default: {
-            x: mousePosition.x - 10,
-            y: mousePosition.y - 10
-        },
-        text: {
-            x: mousePosition.x - 35,
-            y: mousePosition.y - 35,
-            height: 70,
-            width: 70,
-            backgroundColor: "#2c3333",
-            mixBlendMode: "difference"
-        }
-    }
 
-    const textEnter = () => {
-        setCursorVarient("text")
-    }
-    const textLeave = () => {
-        setCursorVarient("default")
-    }
-
-    let onHover = "red"
-    let abhishek = ['a', 'b', 'h', 'i', 's', 'h', 'e', 'k'];
 
     return (
         <section id="home" className="relative flex justify-center flex-col gap-5 items-center w-[100%] h-screen
@@ -70,10 +36,7 @@ const Landing = ({ setSelectedPage }) => {
                     once: true, amount: 0.5
                 }}
                 transition={{ duration: 0.5 }}
-                variants={{
-                    hidden: { opacity: 0, scale: 0 },
-                    visible: { opacity: 1, scale: 1 }
-                }}
+                variants={variants}
             >
                 <div onMouseEnter={textEnter} onMouseLeave={textLeave} className="text-5xl sm:text-9xl font-League-Spartan capitalize flex gap-1 justify-between">
                     {
@@ -98,33 +61,33 @@ const Landing = ({ setSelectedPage }) => {
                     }
                     <motion.h1
                         initial={{
-                            opacity:0,
-                            x:-20,
+                            opacity: 0,
+                            x: -20,
                         }}
                         transition={{
                             delay: 0.7,
                             duration: 0.1,
                         }}
                         whileInView={{
-                            opacity:1,
-                            x:0,
+                            opacity: 1,
+                            x: 0,
                         }}
                     >
                         COR
-                        
+
                     </motion.h1>
                     <motion.h1
                         initial={{
-                            opacity:0,
-                            x:+20,
+                            opacity: 0,
+                            x: +20,
                         }}
                         transition={{
                             delay: 1.2,
                             duration: 0.3,
                         }}
                         whileInView={{
-                            opacity:1,
-                            x:0,
+                            opacity: 1,
+                            x: 0,
                         }}
                     >
                         CIS
@@ -201,8 +164,8 @@ const Landing = ({ setSelectedPage }) => {
 
             <motion.div className="cursor" style={{
                 backgroundColor: "#ffffdd",
-                height: "20px",
-                width: "20px",
+                height: `${cursorSize.h}px`,
+                width: `${cursorSize.w}px`,
                 borderRadius: "50%",
                 position: "fixed",
                 top: "0",

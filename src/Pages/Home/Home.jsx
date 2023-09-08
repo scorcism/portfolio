@@ -7,6 +7,7 @@ import Landing from "./Scenes/Landing";
 import About from "./Scenes/About";
 import Projetcs from "./Scenes/Projects";
 import Socials from "./Scenes/Socials";
+import HomeState from "./Context/HomeState";
 
 const Home = () => {
 
@@ -15,7 +16,7 @@ const Home = () => {
     const [isTopOfPage, setIsTopOfPage] = useState(true);
 
     useEffect(() => {
-        
+
         const handleScroll = () => {
             if (window.screenY === 0) {
                 setIsTopOfPage(true);
@@ -28,39 +29,45 @@ const Home = () => {
         }
     }, [])
 
-    console.log(selectedPage)
+    // console.log(selectedPage)
 
     return (
         <>
-            <div className="app bg-gray">
-                <Navbar
-                    isTopOfPage={isTopOfPage}
-                    selectedPage={selectedPage}
-                    setSelectedPage={setSelectedPage}
-                />
-                <div className="w-5/6 mx-auto md:h-full">
-                    {
-                        isAboveMediumScreens && (
-                            <DotGroup
-                                selectedPage={selectedPage}
-                                setSelectedPage={setSelectedPage}
-                            />
-                        )}
-                    <Landing setSelectedPage={setSelectedPage} />
+            <HomeState>
+
+
+                <div className="app bg-gray">
+                    <Navbar
+                        isTopOfPage={isTopOfPage}
+                        selectedPage={selectedPage}
+                        setSelectedPage={setSelectedPage}
+                    />
+                    <div className="w-5/6 mx-auto md:h-full">
+                        {
+                            // isAboveMediumScreens && (
+                            //     <DotGroup
+                            //         selectedPage={selectedPage}
+                            //         setSelectedPage={setSelectedPage}
+                            //     />
+                            // )
+                        }
+                        <Landing setSelectedPage={setSelectedPage} />
+                    </div>
+                    <Line />
+                    <div className="w-5/6 mx-auto md:h-full">
+                        <About setSelectedPage={setSelectedPage} />
+                    </div>
+                    <Line />
+                    <div className="mx-auto w-5/6">
+                        <Projetcs setSelectedPage={setSelectedPage} />
+                    </div>
+                    <Line />
+                    <div className="mx-auto w-5/6">
+                        <Socials />
+                    </div>
                 </div>
-                <Line />
-                <div className="w-5/6 mx-auto md:h-full">
-                        <About setSelectedPage={setSelectedPage}/> 
-                </div>
-                <Line/>
-                <div className="mx-auto w-5/6">
-                    <Projetcs setSelectedPage={setSelectedPage}/>
-                </div>
-                <Line/>
-                <div className="mx-auto w-5/6">
-                        <Socials/>
-                </div>
-            </div>
+
+            </HomeState>
         </>
     )
 }
