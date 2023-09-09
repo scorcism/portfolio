@@ -1,9 +1,9 @@
 import { useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import useMediaQuery from "../../../hooks/useMediaQuery";
+import { Link } from "react-router-dom";
 
-
-const Link = ({ page, selectedPage, setSelectedPage }) => {
+const HeaderLink = ({ page, selectedPage, setSelectedPage }) => {
     const lowerCasePage = page.toLowerCase();
 
     return (
@@ -37,11 +37,12 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
                     isAboveMediumScreens ?
                         (
                             <div className="flex justify-between gap-16 font-opensans text-sm font-semibold">
-                                <Link page="Home" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
-                                <Link page="about" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
-                                <Link page="Projects" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
-                                <Link page="Blogs" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
-                                <Link page="Contact" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+                                <HeaderLink page="Home" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+                                <HeaderLink page="about" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+                                <HeaderLink page="Projects" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+                                <Link to={"/blogs"} className=" hover:text-red-800 text-white transition duration-300
+        border-b-[1px] border-transparent hover:border-white cursor-pointer">Blogs</Link>
+                                <HeaderLink page="Contact" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
                             </div>
                         )
                         :

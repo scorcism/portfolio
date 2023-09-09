@@ -44,7 +44,7 @@ const Landing = ({ setSelectedPage }) => {
                             <motion.span
                                 initial="left"
                                 transition={{
-                                    delay: 0.5, duration: 0.2,
+                                    delay: 0.6, duration: 0.3,
                                 }}
                                 whileInView="bounce"
                                 variants={{
@@ -82,8 +82,8 @@ const Landing = ({ setSelectedPage }) => {
                             x: +20,
                         }}
                         transition={{
-                            delay: 1.2,
-                            duration: 0.3,
+                            delay: 0.9,
+                            duration: 0.2,
                         }}
                         whileInView={{
                             opacity: 1,
@@ -96,14 +96,15 @@ const Landing = ({ setSelectedPage }) => {
                         isAboveMediumScreens ?
                             <motion.span
                                 initial={{
-                                    x: 0
+                                    x: +60,
+                                    color: "red"
                                 }}
                                 transition={{
-                                    delay: 0.7, duration: 0.4
+                                    delay: 1, duration: 0.2
                                 }}
                                 whileInView={{
-                                    x: +60, opacity: 0,
-                                    color: "red"
+                                    x: 0,
+                                    color: "white"
                                 }}
                             >
                                 M
@@ -112,26 +113,6 @@ const Landing = ({ setSelectedPage }) => {
                             <h1>
                                 M
                             </h1>
-                    }
-                    {
-                        isAboveMediumScreens &&
-                        <motion.span
-                            initial={{
-                                opacity: 0,
-                                color: "red"
-                            }}
-                            transition={{
-                                delay: 1.3,
-                                duration: 0.4
-                            }}
-                            whileInView={{
-                                x: -110,
-                                opacity: 1,
-                                color: "#ffffdd"
-                            }}
-                        >
-                            M
-                        </motion.span>
                     }
                 </div>
 
@@ -208,7 +189,7 @@ const Landing = ({ setSelectedPage }) => {
                                     duration: 0.2
                                 }}
                             >
-                                {a}
+                                {a.toLowerCase()}
                             </motion.span>
                         })
                     }
