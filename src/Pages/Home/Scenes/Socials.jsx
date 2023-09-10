@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const Socials = () => {
     return (
-        <section id="contact" className="pt-3 pb-3 flex flex-col w-full items-center justify-center font-Poppins text-xl gap-10">
+        <section id="contact" className="pt-1 pb-1 flex flex-col w-full items-center justify-center font-Poppins text-xl gap-3">
             <motion.h2 className="text-2xl font-Poppins "
 
                 initial="hidden"
@@ -14,7 +14,7 @@ const Socials = () => {
                     visible: { opacity: 1, y: 0 }
                 }}
             >Contacts: </motion.h2>
-            <motion.div className="flex flex-row gap-12"
+            <motion.div className="flex flex-row gap-12 mb-2"
                 initial="hidden"
                 whileInView="visible"
                 transition={{ duration: 0.5 }}

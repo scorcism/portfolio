@@ -20,7 +20,7 @@ const About = ({ setSelectedPage }) => {
 
     return (
         <section id="about" ref={ref} className="md:flex md:justify-between md:items-center md:h-full gap-16 py-10">
-            <div className="z-30 basis-2/5 mt-12 md:mt-32 ">
+            <div className="z-30  mt-12 md:mt-32 ">
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
@@ -45,10 +45,12 @@ const About = ({ setSelectedPage }) => {
                 </motion.div>
 
             </div>
-            <motion.div style={{ cursor: "pointer" }} className="md:order-2 flex justify-center basis-3/5 z-10 mt-16 md:mt-32" ref={constraintsRef}>
-                <motion.div className="relative z-0 ml-20" >
+            <motion.div style={{ cursor: "pointer" }} className="md:order-2 flex justify-center z-10  items-ceter" 
+                ref={constraintsRef}
+            >
+                <motion.div className="relative z-0 ml-20 " >
                     <motion.img
-                        drag dragConstraints={constraintsRef}
+                    drag dragConstraints={constraintsRef}
                         src="assets/profile-image.png" alt="profile" className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px]" />
                 </motion.div>
 

@@ -114,7 +114,7 @@ const Projetcs = ({ setSelectedPage }) => {
                                 </div>
                             )
                         })
-                    }
+                    }   
                     <div className='flex justify-center text-center items-center p-10 max-w-[400px] max-h-[400px] text-2xl font-Poppins font-semibold'>SMOOTH USER EXPERIENCE</div>
                 </motion.div>
 

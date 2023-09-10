@@ -172,7 +172,7 @@ const Landing = ({ setSelectedPage }) => {
                     delay: 1.9
                 }}
 
-                className="absolute bottom-0 md:right-[-1em] sm:right-[-30px] text-9xl font-League-Spartan opacity-10"
+                className="absolute bottom-0 right-0 text-9xl font-League-Spartan opacity-10"
             >
                 <motion.h1
                     className="flex flex-row"

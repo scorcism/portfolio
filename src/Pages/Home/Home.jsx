@@ -8,6 +8,7 @@ import About from "./Scenes/About";
 import Projetcs from "./Scenes/Projects";
 import Socials from "./Scenes/Socials";
 import HomeState from "./Context/HomeState";
+import ImageGallery from "./Scenes/ImageGallery";
 
 const Home = () => {
 
@@ -42,7 +43,7 @@ const Home = () => {
                         selectedPage={selectedPage}
                         setSelectedPage={setSelectedPage}
                     />
-                    <div className="w-5/6 mx-auto md:h-full">
+                    <div className="w-full mx-auto md:h-full">
                         {
                             // isAboveMediumScreens && (
                             //     <DotGroup
@@ -61,7 +62,11 @@ const Home = () => {
                     <div className="mx-auto w-5/6">
                         <Projetcs setSelectedPage={setSelectedPage} />
                     </div>
-                    <Line />
+                    <Line />                    
+                    <div className="mx-auto w-5/6">
+                        <ImageGallery />
+                    </div>
+                    <Line/>
                     <div className="mx-auto w-5/6">
                         <Socials />
                     </div>
