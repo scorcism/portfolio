@@ -1,14 +1,15 @@
-import { Link } from "react-router-dom";
+import Images from "../Components/Images";
+import Header from "../Components/Header";
 
 
-const GalleryHome = () =>{
-    return  (
-        <>
-        <div className="flex w-full h-screen items-center justify-center text-white bg-black flex-col gap-10">
-            <h1 className="text-4xl ">COMING SOON Gallery</h1>
-            <Link to={"/"}>Home</Link>
+const GalleryHome = () => {
+    return (
+        <div className="w-full h-screen">
+            <Header />
+            <Images />
+
+            
         </div>
-        </>
     )
 }
 
