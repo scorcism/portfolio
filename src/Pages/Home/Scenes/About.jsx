@@ -46,11 +46,11 @@ const About = ({ setSelectedPage }) => {
 
             </div>
             <motion.div style={{ cursor: "pointer" }} className="md:order-2 flex justify-center z-10  items-ceter" 
-                ref={constraintsRef}
             >
+                {/* ref={constraintsRef} */}
                 <motion.div className="relative z-0 ml-20 " >
                     <motion.img
-                    drag dragConstraints={constraintsRef}
+                    // drag dragConstraints={constraintsRef}
                         src="assets/profile-image.png" alt="profile" className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px]" />
                 </motion.div>
 

@@ -40,8 +40,10 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
                                 <HeaderLink page="Home" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
                                 <HeaderLink page="about" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
                                 <HeaderLink page="Projects" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
-                                <Link to={"/blogs"} className=" hover:text-red-800 text-white transition duration-300
+                                <Link to={"/blogs"} className=" hover:text-red-600 text-white transition duration-300
         border-b-[1px] border-transparent hover:border-white cursor-pointer">Blogs</Link>
+                                <Link to={"/gallery"} className=" hover:text-red-600 text-white transition duration-300
+        border-b-[1px] border-transparent hover:border-white cursor-pointer">Gallery</Link>
                                 <HeaderLink page="Contact" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
                             </div>
                         )

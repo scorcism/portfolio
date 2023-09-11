@@ -26,7 +26,7 @@ const Crousal = () => {
         <div className="overflow-hidden relative">
             <div className="flex flex-col md:flex-row">
                 <motion.img
-                    src={slides[index]} alt={slides[index]} className="h-[600px] rounded-md transition-transform ease-out duration-500" />
+                    src={slides[index]} alt={slides[index]} className="sm:h-[600px] h-[400px]  rounded-md transition-transform ease-out duration-500" />
                 <div className="absolute inset-0 flex justify-between items-center text-2xl ">
                     <button onClick={next} className="outline-none bg-white/80 rounded-full shadow text-gray hover:bg-white p-1 transition duration-150 w-9 h-9">
                         &lt;

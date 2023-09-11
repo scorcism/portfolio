@@ -27,25 +27,22 @@ const projectVarient = {
 
 const Project = ({ title, desc, url }) => {
     const projectTitle = title.split(" ").join("-").toLowerCase();
-    const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-90 hover:bg-black transition duration-500
-    bg-grey z-30 flex flex-col justify-center items-center text-center p-16 text-white
+    const overlayStyles = `absolute h-full w-full xs:opacity-1  sm:opacity-0 sm:hover:opacity-90 sm:hover:bg-black transition duration-500
+    sm:bg-grey sm:z-30 flex flex-col justify-center items-center text-center p-16 text-white
     `
-
-
-
     return (
         <motion.div
             variants={projectVarient}
             className='relative'
         >
             <div className={overlayStyles} >
-                <a href={url} className='text-2xl font-playfair'>
+                <a href={url} className='text-2xl font-playfair '>
 
                     {title}
                 </a>
                 <p className='mt-7'>{desc}</p>
             </div>
-            <div className='hover:opacity-25'>
+            <div className='sm:hover:opacity-25'>
                 <img src={`assets/${projectTitle}.png`} alt={projectTitle} />
             </div>
 
@@ -105,7 +102,7 @@ const Projetcs = ({ setSelectedPage }) => {
                     variants={container}
                 >
                     {/* row 1 */}
-                    <div className='flex justify-center text-center items-center p-10 bg-red max-w-[400px] max-h-[400px] text-2xl font-Poppins font-semibold '>BEAUTIFUL USER INTERFACES</div>
+                    <div className='flex justify-center text-center items-center p-10 bg-red sm:max-w-[400px] sm:max-h-[400px] xs:max-w-[350px] xs:max-h-[400px] text-2xl font-Poppins font-semibold '>BEAUTIFUL USER INTERFACES</div>
                     {
                         projects.map((project) => {
                             return (
