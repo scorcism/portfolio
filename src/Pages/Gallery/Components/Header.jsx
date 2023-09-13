@@ -15,7 +15,7 @@ const Header = () => {
                     duration:0.2
                 }}
                 className="text-4xl font-Satisfy font-semibold ">Gallery</motion.h1>
-                <Link to={"/"} className="text-xl">Home</Link>
+                <Link to={"/"} className="text-lg">Home</Link>
             </div>
         </nav>
     )
