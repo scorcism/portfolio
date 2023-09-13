@@ -56,7 +56,7 @@ const LinksHome = () => {
             >
                 {
                     links && links.map((link) => (
-                        <p key={link.id} className="flex flex-row gap-5 my-3 border-2 border-white/60 items-center justify-center py-2 px-3 xs:w-[400px]  sm:w-[600px] text-base rounded-3xl text-white/90 hover:bg-gray transition duration-300 mx-1">
+                        <p key={link.id} className="flex flex-row gap-5 my-3 border-2 border-white/60 items-center justify-center py-2 px-3 xs:w-[350px] sm:w-[600px] text-base rounded-3xl text-white/90 hover:bg-gray transition duration-300 mx-2">
                             <motion.span
                                 transition={{
                                     duration: 0.3
