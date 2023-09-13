@@ -23,16 +23,15 @@ const LinksHome = () => {
                         duration: 0.3
                     }}
                     className="text-5xl font-semibold">Abhishek Pathak</motion.h1>
-                <div className="languages sm:w-[80%] flex my-5 flex-row gap-4 flex-wrap items-center justify-center">
+                <div className="languages sm:w-[80%] px-3 flex my-5 flex-row gap-4 flex-wrap items-center justify-center">
                     {languages && languages.map((lang) => (
                         <motion.p key={lang} className="border border-1 border-white py-[3px] px-[5px] rounded-sm hover:bg-gray transition duration-250"
-
 
                         >{lang}</motion.p>
                     ))}
                 </div>
             </section>
-            <section className="links h-screen mt-1 flex py-5 pb-10 items-center justify-centerc flex-col bg-black/70"
+            <section className="links mt-1 flex py-5 pb-10 items-center justify-centerc flex-col bg-black/70"
                 style={{
                     borderTopLeftRadius: "1.5rem",
                     borderTopRightRadius: "1.5rem"
