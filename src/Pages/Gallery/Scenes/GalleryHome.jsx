@@ -7,7 +7,7 @@ const GalleryHome = () => {
         <div className="w-full h-screen">
             <Header />
             <Images />
-
+            
             
         </div>
     )

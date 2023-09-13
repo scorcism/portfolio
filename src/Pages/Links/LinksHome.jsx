@@ -1,15 +1,25 @@
 import { motion } from "framer-motion";
 import { links } from "./assets/links";
-import { languages } from "./assets/skills";
+import { FaAlignJustify, FaAsterisk } from "react-icons/fa";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
+
 
 
 const LinksHome = () => {
+
+    const [isMenuToggled, setIsMenuToggled] = useState(false);
+
+
     return (
         <div className="min-h-[100vh] flex flex-col">
-            <section className="meta mb-1 flex py-5 items-center justify-center text-center flex-col bg-black/90 " style={{
-                borderBottomLeftRadius: "1.5rem",
-                borderBottomRightRadius: "1.5rem"
-            }}>
+            <section className="relative meta mb-1 flex py-5 items-center justify-center text-center flex-col bg-black/90 "
+                style={{
+                    borderBottomLeftRadius: "1.5rem",
+                    borderBottomRightRadius: "1.5rem"
+                }}
+            >
                 <motion.h1
                     initial={{
                         y: -30,
@@ -22,16 +32,23 @@ const LinksHome = () => {
                     transition={{
                         duration: 0.3
                     }}
-                    className="text-5xl font-semibold">Abhishek Pathak</motion.h1>
-                <div className="languages sm:w-[80%] px-3 flex my-5 flex-row gap-4 flex-wrap items-center justify-center">
-                    {languages && languages.map((lang) => (
-                        <motion.p key={lang} className="border border-1 border-white py-[3px] px-[5px] rounded-sm hover:bg-gray transition duration-250"
-
-                        >{lang}</motion.p>
-                    ))}
+                    className="text-5xl font-semibold px-1">Abhishek Pathak</motion.h1>
+                <div className="languages sm:w-[80%] px-3 flex my-5 gap-4 flex-wrap items-center justify-center flex-col">
+                    <h3>Lorem, ipsum dolor.</h3>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere a non atque quo aspernatur. Vel enim assumenda labore, sequi veniam officia in porro!
+                    </p>
+                </div>
+                <div className="absolute sm:top-10 sm:right-10 xs:top-8 xs:right-0">
+                    <button
+                        className="rounded-full bg-red p-2 text-xl"
+                        onClick={() => setIsMenuToggled(!isMenuToggled)}
+                    >
+                        <FaAlignJustify />
+                    </button>
                 </div>
             </section>
-            <section className="links mt-1 flex py-5 pb-10 items-center justify-centerc flex-col bg-black/70"
+            <section className="links mt-1 flex py-5 pb-10 items-center justify-centerc flex-col bg-black/70 px-2"
                 style={{
                     borderTopLeftRadius: "1.5rem",
                     borderTopRightRadius: "1.5rem"
@@ -39,7 +56,7 @@ const LinksHome = () => {
             >
                 {
                     links && links.map((link) => (
-                        <p key={link.id} className="flex flex-row gap-5 my-3 border-2 border-white/60 items-center justify-center py-2 px-3 xs:w-[400px]  sm:w-[600px] text-base rounded-3xl text-white/90 hover:bg-gray transition duration-300">
+                        <p key={link.id} className="flex flex-row gap-5 my-3 border-2 border-white/60 items-center justify-center py-2 px-3 xs:w-[400px]  sm:w-[600px] text-base rounded-3xl text-white/90 hover:bg-gray transition duration-300 mx-1">
                             <motion.span
                                 transition={{
                                     duration: 0.3
@@ -53,6 +70,62 @@ const LinksHome = () => {
                             </motion.span>
                             <a href={link.url} target="_blank" rel="noopener noreferrer">{link.title}</a></p>
                     ))
+                }
+
+                {/* MOBILE MENU POPUP */}
+                {
+                    isMenuToggled && (
+                        <motion.div
+                            initial={{
+                                x: +60,
+                                opacity: 0
+                            }}
+                            whileInView={{
+                                opacity: 1,
+                                x: 0,
+                            }}
+                            transition={{
+                                duration: 0.2
+                            }}
+
+                            className="fixed right-0 bottom-0 h-full bg-black/80 w-[200px]">
+                            {/* CLOSE ICON */}
+                            <div className="flex justify-end p-12 text-2xl">
+                                <button onClick={() => {
+                                    setIsMenuToggled(!isMenuToggled)
+                                }}>
+                                    <FaAsterisk />
+                                </button>
+                            </div>
+
+                            {/* MENU ITEMS */}
+                            <motion.div
+                                initial={{
+                                    x: +60,
+                                    opacity: 0
+                                }}
+                                whileInView={{
+                                    opacity: 1,
+                                    x: 0,
+                                }}
+                                transition={{
+                                    duration: 0.3,
+                                    delay: 0.2
+                                }}
+
+                                className="flex flex-col gap-10 ml-[25%] text-2xl text-red-700 ">
+
+                                <Link to={"/"} className=" hover:text-red-600 text-white transition duration-300
+             cursor-pointer">Home</Link>
+                                <Link to={"https://dev.to/scorcism/"} target="_blank" className=" hover:text-red-600 text-white transition duration-300
+             cursor-pointer">Blogs</Link>
+                                <Link to={"/gallery"} className=" hover:text-red-600 text-white transition duration-300
+             cursor-pointer">Gallery</Link>
+                                <Link to={"/links"} className=" hover:text-red-600 text-white transition duration-300
+             cursor-pointer">Links</Link>
+                            </motion.div>
+                        </motion.div>
+                    )
                 }
             </section>
         </div>
