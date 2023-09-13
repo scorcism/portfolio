@@ -44,13 +44,13 @@ export const links = [
     {
         id: 6,
         title: "Dev.to - You can find, My Blog here",
-        url: "",
+        url: "https://dev.to/scorcism/",
         icon: <FaDev />
     },
     {
         id: 7,
         title: "Blog - Sometimes I write here also",
-        url: "",
+        url: "https://dev.to/scorcism/",
         icon: <FaLink />
     },
     {
