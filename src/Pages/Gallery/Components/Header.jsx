@@ -7,7 +7,7 @@ const Header = () => {
     const [isMenuToggled, setIsMenuToggled] = useState(false);
 
     return (
-        <nav className="z-40 w-full h-16 mb-4 py-3 bg-black/50">
+        <nav className="fixed top-0 z-40 w-full h-16 mb-4 py-3 bg-black/50">
             <div className="relative flex justify-center items-center px-5">
                 <motion.h1 whileHover={{
                     letterSpacing: "2px",
