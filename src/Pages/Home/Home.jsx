@@ -17,18 +17,15 @@ const Home = () => {
     const [isTopOfPage, setIsTopOfPage] = useState(true);
 
     useEffect(() => {
-
         const handleScroll = () => {
-            if (window.screenY === 0) {
+            if (window.scrollY === 0) {
                 setIsTopOfPage(true);
             }
-            if (window.screenY !== 0) {
-                setIsTopOfPage(false);
-            }
-            window.addEventListener("scroll", handleScroll);
-            return () => window.removeEventListener("scroll", handleScroll)
-        }
-    }, [])
+            if (window.scrollY !== 0) setIsTopOfPage(false);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     // console.log(selectedPage)
 
@@ -62,11 +59,11 @@ const Home = () => {
                     <div className="mx-auto w-5/6">
                         <Projetcs setSelectedPage={setSelectedPage} />
                     </div>
-                    <Line />                    
+                    <Line />
                     <div className="mx-auto w-5/6">
                         <ImageGallery />
                     </div>
-                    <Line/>
+                    <Line />
                     <div className="mx-auto w-5/6">
                         <Socials />
                     </div>

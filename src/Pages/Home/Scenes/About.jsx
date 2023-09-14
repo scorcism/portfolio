@@ -20,7 +20,7 @@ const About = ({ setSelectedPage }) => {
 
     return (
         <section id="about" ref={ref} className="md:flex md:justify-between md:items-center md:h-full gap-16 py-10">
-            <div className="z-30  mt-12 md:mt-32 ">
+            <div className="z-30 md:w-1/2  mt-12 md:mt-32 ">
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
@@ -29,6 +29,10 @@ const About = ({ setSelectedPage }) => {
                     variants={{
                         hidden: { opacity: 0, x: -50 },
                         visible: { opacity: 1, x: 0 }
+                    }}
+                    exit={{
+                        opacity: 0,
+                        x:-50
                     }}
                 >
                     <p className="text-6xl font-playfair z-10 text-center md:text-start text-white">
@@ -41,16 +45,18 @@ const About = ({ setSelectedPage }) => {
                             onMouseLeave={textLeave}
                         >Abhishek</motion.span>
                     </p>
-                    <p className="mt-10  mb-7 text-md text-center md:text-start">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam repellat expedita quaerat?</p>
+                    <p className="mt-10  mb-7 text-md text-center text-lg md:text-start">Hey! this is Abhishek Pathak. <br/>I’m a Developer who likes to always keep learning. I look forward to waking up early each day and devote most of my time into learning. I take some time off in between to watch movies or connect to my friends. But mostly, I’d be at my desk, immersed into my laptop.<br/>I'm most happy to help you.</p>
+
+                    <p className="border-2 mt-2 border-red-900 w-fit py-2 px-2 cursor-pointer bg-red-800 rounded-sm hover:border-black transition duration-500"><a href="mailto:abhishekpathak1720@gmail.com" target="_blank">Contact me</a></p>
                 </motion.div>
 
             </div>
-            <motion.div style={{ cursor: "pointer" }} className="md:order-2 flex justify-center z-10  items-ceter" 
+            <motion.div style={{ cursor: "pointer" }} className="md:order-2 md:w-1/2 flex justify-center z-10  items-ceter"
             >
                 {/* ref={constraintsRef} */}
                 <motion.div className="relative z-0 " >
                     <motion.img
-                    // drag dragConstraints={constraintsRef}
+                        // drag dragConstraints={constraintsRef}
                         src="assets/profile-image.png" alt="profile" className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px]" />
                 </motion.div>
 
