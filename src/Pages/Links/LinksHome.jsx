@@ -10,14 +10,17 @@ import { Link } from "react-router-dom";
 const LinksHome = () => {
 
     const [isMenuToggled, setIsMenuToggled] = useState(false);
+    const [modalOpen, setModalOpen] = useState(false);
 
 
     return (
-        <div className="min-h-[100vh] flex flex-col">
+        <div className="min-h-[100vh] flex flex-col m-3">
             <section className="relative meta mb-1 flex py-5 items-center justify-center text-center flex-col bg-black/90 "
                 style={{
                     borderBottomLeftRadius: "1.5rem",
-                    borderBottomRightRadius: "1.5rem"
+                    borderBottomRightRadius: "1.5rem",
+                    borderTopRightRadius: "0.8rem",
+                    borderTopLeftRadius: "0.8rem",
                 }}
             >
                 <motion.h1
@@ -34,9 +37,8 @@ const LinksHome = () => {
                     }}
                     className="text-5xl font-semibold px-1">Abhishek Pathak</motion.h1>
                 <div className="languages sm:w-[80%] px-3 flex my-5 gap-4 flex-wrap items-center justify-center flex-col">
-                    <h3>Lorem, ipsum dolor.</h3>
                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere a non atque quo aspernatur. Vel enim assumenda labore, sequi veniam officia in porro!
+                        Hey! this is Abhishek Pathak. I’m a graduate who likes to always keep learning. <br />I look forward to waking up early each day and devote most of my time into learning. <br />I take some time off in between to watch movies or connect to my friends. But mostly, I’d be at my desk, immersed into my laptop.
                     </p>
                 </div>
                 <div className="absolute sm:top-10 sm:right-10 xs:top-8 xs:right-0">
@@ -48,10 +50,13 @@ const LinksHome = () => {
                     </button>
                 </div>
             </section>
+
             <section className="links mt-1 flex py-5 pb-10 items-center justify-centerc flex-col bg-black/70 px-2"
                 style={{
                     borderTopLeftRadius: "1.5rem",
-                    borderTopRightRadius: "1.5rem"
+                    borderTopRightRadius: "1.5rem",
+                    borderBottomLeftRadius: "0.5rem",
+                    borderBottomRightRadius: "0.5rem",
                 }}
             >
                 {
@@ -128,6 +133,12 @@ const LinksHome = () => {
                     )
                 }
             </section>
+
+
+            {
+
+            }
+
         </div>
     )
 }

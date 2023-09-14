@@ -25,7 +25,7 @@ export const links = [
     },
     {
         id: 3,
-        title: "Linkedin - I Post my project updates",
+        title: "Linkedin - Learning the platform",
         url: "https://www.linkedin.com/in/abhishekpathak32/",
         icon: <FaLinkedin />
     },
@@ -36,33 +36,21 @@ export const links = [
         icon: <FaEnvelope />
     },
     {
-        id: 5,
-        title: "Skype - We can have a convo here",
-        url: "",
-        icon: <FaSkype />
-    },
-    {
         id: 6,
         title: "Dev.to - You can find, My Blog here",
         url: "https://dev.to/scorcism/",
         icon: <FaDev />
     },
     {
-        id: 7,
-        title: "Blog - Sometimes I write here also",
-        url: "https://dev.to/scorcism/",
-        icon: <FaLink />
-    },
-    {
         id: 8,
         title: "Instagram - My Posts, which i rarely",
-        url: "",
+        url: "https://www.instagram.com/scor.cism/",
         icon: <FaInstagram />
     },
     {
         id: 9,
-        title: "Youtube - Not fulltime, I Post funny stuffs",
-        url: "",
+        title: "Youtube - I Post funny stuffs.... sometime",
+        url: "https://www.youtube.com/@scor32k",
         icon: <FaYoutube />
     },
 ]
